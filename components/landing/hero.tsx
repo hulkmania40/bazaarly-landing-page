@@ -16,7 +16,7 @@ const MOCK_PRODUCTS = [
   { name: "Scented soy candle", price: "$18", color: "bg-violet-100" },
 ]
 
-export function Hero() {
+export default function Hero() {
   const scrollTo = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" })
   }
@@ -51,7 +51,7 @@ export function Hero() {
             <StaggerItem index={1}>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
                 Discover independent sellers, browse curated storefronts, and shop
-                with confidence — every product is reviewed and approved before
+                with confidence. Every product is reviewed and approved before
                 going live.
               </p>
             </StaggerItem>
@@ -85,7 +85,7 @@ export function Hero() {
           </div>
 
           {/* Right: mock product cards */}
-          <div className="relative hidden lg:flex items-center justify-center">
+          <div className="relative flex min-h-[25rem] items-center justify-center lg:min-h-[28rem]">
             <div className="relative w-full max-w-sm">
               {MOCK_PRODUCTS.map((product, i) => (
                 <div

@@ -4,7 +4,7 @@ import { StaggerItem } from "@/components/landing/reveal"
 import { Button } from "@/components/ui/button"
 import { Store, Search } from "lucide-react"
 
-export function CTA() {
+export default function CTA() {
   const scrollTo = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" })
   }

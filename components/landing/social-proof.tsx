@@ -3,7 +3,7 @@
 import { StaggerItem } from "@/components/landing/reveal"
 import { BRAND_PLACEHOLDERS } from "@/lib/landing-content"
 
-export function SocialProof() {
+export default function SocialProof() {
   return (
     <section className="py-10 md:py-14 border-y">
       <div className="mx-auto max-w-6xl px-6">

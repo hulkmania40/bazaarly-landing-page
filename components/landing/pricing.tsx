@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Check, X } from "lucide-react"
 
-export function Pricing() {
+export default function Pricing() {
   return (
     <section id="pricing" className="py-20 md:py-28 bg-muted/40">
       <div className="mx-auto max-w-6xl px-6">

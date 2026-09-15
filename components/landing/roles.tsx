@@ -3,7 +3,6 @@
 import { StaggerItem } from "@/components/landing/reveal"
 import { ROLES } from "@/lib/landing-content"
 import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { ShoppingBag, Store, ShieldCheck } from "lucide-react"
 
 const ICON_MAP: Record<string, React.ElementType> = {
@@ -12,7 +11,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
   ShieldCheck,
 }
 
-export function Roles() {
+export default function Roles() {
   const scrollTo = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" })
   }
@@ -25,7 +24,7 @@ export function Roles() {
             Built for all three sides of the market
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Whether you're buying, selling, or managing — there's a place for you here.
+            Whether you're buying, selling, or managing, there's a place for you here.
           </p>
         </div>
 

@@ -3,7 +3,7 @@
 import { StaggerItem } from "@/components/landing/reveal"
 import { STEPS } from "@/lib/landing-content"
 import { Card } from "@/components/ui/card"
-import { CheckCircle2, Search, ShieldCheck, ShoppingCart } from "lucide-react"
+import { ShieldCheck, ShoppingCart, Store } from "lucide-react"
 
 const TABS = [
   {
@@ -29,7 +29,7 @@ const TABS = [
   },
 ]
 
-export function HowItWorks() {
+export default function HowItWorks() {
   return (
     <section id="how-it-works" className="py-20 md:py-28 bg-muted/40">
       <div className="mx-auto max-w-6xl px-6">
@@ -38,7 +38,7 @@ export function HowItWorks() {
             How it works
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Three sides of the same marketplace — each with a flow built just for them.
+            Three sides of the same marketplace, each with a flow built just for them.
           </p>
         </div>
 

@@ -23,7 +23,7 @@ export const FEATURES = [
     icon: "Users",
     title: "Role-based dashboards",
     description:
-      "Customer, seller, and admin views — each tailored to what that person actually needs to do.",
+      "Customer, seller, and admin views, each tailored to what that person actually needs to do.",
   },
   {
     icon: "CreditCard",
@@ -41,7 +41,7 @@ export const FEATURES = [
     icon: "BarChart3",
     title: "Insights & analytics",
     description:
-      "Know what's selling, what's not. Sellers get simple dashboards — no data science degree required.",
+      "Know what's selling, what's not. Sellers get simple dashboards without needing a data science degree.",
   },
 ] as const
 
@@ -56,13 +56,13 @@ export const STEPS = [
     number: "02",
     title: "Admin reviews & approves",
     description:
-      "Every listing is checked by our team before going live — protecting buyers and building trust.",
+      "Every listing is checked by our team before going live, protecting buyers and building trust.",
   },
   {
     number: "03",
     title: "Customers discover & buy",
     description:
-      "Browse curated sellers, add to cart, pay securely, and track orders — all in one place.",
+      "Browse curated sellers, add to cart, pay securely, and track orders all in one place.",
   },
 ] as const
 
@@ -131,7 +131,7 @@ export const FAQS = [
   {
     question: "How do I become a seller?",
     answer:
-      "Create an account, choose the seller role, fill in your store details, and submit your first listings. Each listing goes through a quick admin review before going live — usually within 24 hours.",
+      "Create an account, choose the seller role, fill in your store details, and submit your first listings. Each listing goes through a quick admin review before going live, usually within 24 hours.",
   },
   {
     question: "How long does product approval take?",
@@ -156,7 +156,7 @@ export const FAQS = [
   {
     question: "Is there a fee for customers?",
     answer:
-      "No. Customers browse, cart, and checkout for free. We never charge buyers fees — our revenue comes from optional seller subscription plans.",
+      "No. Customers browse, cart, and checkout for free. We never charge buyer fees; revenue comes from optional seller subscription plans.",
   },
 ] as const
 

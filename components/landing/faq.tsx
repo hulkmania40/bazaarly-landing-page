@@ -9,7 +9,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion"
 
-export function FAQ() {
+export default function FAQ() {
   return (
     <section id="faq" className="py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
@@ -20,7 +20,7 @@ export function FAQ() {
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion className="w-full">
             {FAQS.map(({ question, answer }, i) => (
               <StaggerItem key={question} index={i}>
                 <AccordionItem value={`item-${i}`} className="border-b">

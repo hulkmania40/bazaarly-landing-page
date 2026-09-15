@@ -7,7 +7,6 @@ import {
   CheckCircle2,
   CreditCard,
   Store,
-  ShieldCheck,
   BarChart3,
   Truck,
   Users,
@@ -22,7 +21,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
   BarChart3,
 }
 
-export function Features() {
+export default function Features() {
   return (
     <section id="features" className="py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">

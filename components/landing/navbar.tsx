@@ -1,8 +1,8 @@
 "use client"
 
 import { useTheme } from "next-themes"
-import { useState, useEffect } from "react"
-import { ChevronDown, Menu, Moon, Sun, X } from "lucide-react"
+import { useEffect, useState, useSyncExternalStore } from "react"
+import { Menu, Moon, Sun } from "lucide-react"
 
 import { NAV_LINKS } from "@/lib/landing-content"
 import { Button } from "@/components/ui/button"
@@ -13,14 +13,15 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { Menu } from "lucide-react"
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const { resolvedTheme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => setMounted(true), [])
+  const mounted = useSyncExternalStore(
+    () => () => undefined,
+    () => true,
+    () => false
+  )
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -43,7 +44,7 @@ export default function Navbar() {
       <nav className="mx-auto max-w-6xl flex items-center justify-between px-6 h-16">
         {/* Wordmark */}
         <button
-          onClick={() => scrollTo("#")}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center gap-2 font-bold text-lg tracking-tight"
         >
           <span className="bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
@@ -103,10 +104,12 @@ export default function Navbar() {
             </Button>
           )}
           <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open menu">
-                <Menu className="h-5 w-5" />
-              </Button>
+            <SheetTrigger
+              render={
+                <Button variant="ghost" size="icon" aria-label="Open menu" />
+              }
+            >
+              <Menu className="h-5 w-5" />
             </SheetTrigger>
             <SheetContent side="left" showCloseButton>
               <SheetHeader>

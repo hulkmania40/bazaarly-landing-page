@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useReducedMotion } from "framer-motion"
-import type { ComponentType, ReactNode } from "react"
+import type { ReactNode } from "react"
 
 const OFFSET = 12
 const DURATION = 0.5
@@ -20,26 +20,21 @@ interface RevealProps {
   children: ReactNode
   delay?: number
   className?: string
-  as?: ComponentType<Record<string, unknown>>
 }
 
 export function Reveal({
   children,
   delay = 0,
   className,
-  as: AsComponent = "div",
 }: RevealProps) {
   const shouldReduce = useReducedMotion()
 
   if (shouldReduce) {
-    const Comp = AsComponent as keyof JSX.IntrinsicElements
-    return <Comp className={className}>{children}</Comp>
+    return <div className={className}>{children}</div>
   }
 
-  const Comp = motion(AsComponent)
-
   return (
-    <Comp
+    <motion.div
       className={className}
       initial="hidden"
       whileInView="visible"
@@ -48,7 +43,7 @@ export function Reveal({
       variants={revealVariants}
     >
       {children}
-    </Comp>
+    </motion.div>
   )
 }
 

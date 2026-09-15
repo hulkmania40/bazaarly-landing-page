@@ -1,17 +1,16 @@
 "use client"
 
-import { StaggerItem } from "@/components/landing/reveal"
 import { FOOTER_COLUMNS, SOCIAL_LINKS } from "@/lib/landing-content"
-import { Twitter, Github, Linkedin, Instagram } from "lucide-react"
+import { Camera, Code2, MessageCircle, Network } from "lucide-react"
 
 const SOCIAL_ICONS: Record<string, React.ElementType> = {
-  Twitter,
-  Github,
-  Linkedin,
-  Instagram,
+  Twitter: MessageCircle,
+  Github: Code2,
+  Linkedin: Network,
+  Instagram: Camera,
 }
 
-export function Footer() {
+export default function Footer() {
   return (
     <footer className="border-t py-14 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
@@ -62,7 +61,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-14 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            © 2026 Bazaarly. All rights reserved.
+            (c) 2026 Bazaarly. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">Made for makers</p>
         </div>

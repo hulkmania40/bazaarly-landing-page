@@ -12,11 +12,11 @@ import CTA from "@/components/landing/cta"
 import Footer from "@/components/landing/footer"
 
 export const metadata: Metadata = {
-  title: "Bazaarly — A bazaar built for makers",
+  title: "Bazaarly - A bazaar built for makers",
   description:
     "Bazaarly is a curated marketplace for independent sellers. Discover unique products, manage your storefront, and support independent makers.",
   openGraph: {
-    title: "Bazaarly — A bazaar built for makers",
+    title: "Bazaarly - A bazaar built for makers",
     description:
       "Discover independent sellers, browse curated storefronts, and shop with confidence.",
     type: "website",
