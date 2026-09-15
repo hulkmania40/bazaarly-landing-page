@@ -96,7 +96,7 @@ export const ROLES = [
 export const PRICING_PLANS = [
   {
     name: "Seller",
-    price: "$0",
+    price: "₹0",
     period: "/month",
     description: "Everything you need to get started selling.",
     features: [
@@ -111,7 +111,7 @@ export const PRICING_PLANS = [
   },
   {
     name: "Seller Pro",
-    price: "$19",
+    price: "₹1,599",
     period: "/month",
     description: "For serious makers ready to scale.",
     features: [

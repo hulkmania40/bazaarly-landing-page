@@ -23,49 +23,58 @@ export default function Pricing() {
         <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {PRICING_PLANS.map((plan, i) => (
             <StaggerItem key={plan.name} index={i}>
-              <Card
-                className={`
-                  h-full rounded-2xl border bg-card p-6 shadow-sm hover:shadow-md transition-shadow relative
-                  ${plan.popular ? "ring-2 ring-primary" : ""}
-                `}
-              >
+              <div className="relative pt-3">
                 {plan.popular && (
-                  <Badge className="absolute -top-3 left-6">Most popular</Badge>
+                  <Badge className="absolute left-6 top-0 z-10 shadow-sm">
+                    Most popular
+                  </Badge>
                 )}
-                <h3 className="font-semibold text-lg">{plan.name}</h3>
-                <div className="mt-2 flex items-baseline gap-1">
-                  <span className="text-4xl font-bold">{plan.price}</span>
-                  <span className="text-muted-foreground text-sm">{plan.period}</span>
-                </div>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {plan.description}
-                </p>
-
-                <ul className="mt-6 space-y-2.5">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm">
-                      <Check className="h-4 w-4 text-primary shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                  {plan.missing.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-center gap-2 text-sm text-muted-foreground"
-                    >
-                      <X className="h-4 w-4 shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <Button
-                  className="mt-6 w-full"
-                  variant={plan.popular ? "default" : "outline"}
+                <Card
+                  className={`
+                    relative h-full rounded-2xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-md
+                    ${plan.popular ? "ring-2 ring-primary" : ""}
+                  `}
                 >
-                  {plan.cta}
-                </Button>
-              </Card>
+                  <h3 className="font-semibold text-lg">{plan.name}</h3>
+                  <div className="mt-2 flex items-baseline gap-1">
+                    <span className="text-4xl font-bold">{plan.price}</span>
+                    <span className="text-muted-foreground text-sm">
+                      {plan.period}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {plan.description}
+                  </p>
+
+                  <ul className="mt-6 space-y-2.5">
+                    {plan.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-center gap-2 text-sm"
+                      >
+                        <Check className="h-4 w-4 text-primary shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                    {plan.missing.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-center gap-2 text-sm text-muted-foreground"
+                      >
+                        <X className="h-4 w-4 shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Button
+                    className="mt-6 w-full"
+                    variant={plan.popular ? "default" : "outline"}
+                  >
+                    {plan.cta}
+                  </Button>
+                </Card>
+              </div>
             </StaggerItem>
           ))}
         </div>

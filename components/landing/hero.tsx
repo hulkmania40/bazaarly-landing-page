@@ -1,8 +1,10 @@
 "use client"
 
+import Image from "next/image"
+
 import { StaggerItem } from "@/components/landing/reveal"
 import { Button } from "@/components/ui/button"
-import { CheckCircle2, ChevronRight, Store } from "lucide-react"
+import { CheckCircle2, ChevronRight } from "lucide-react"
 
 const TRUSTS = [
   "No listing fees",
@@ -11,9 +13,27 @@ const TRUSTS = [
 ] as const
 
 const MOCK_PRODUCTS = [
-  { name: "Hand-thrown ceramic mug", price: "$28", color: "bg-amber-100" },
-  { name: "Organic linen apron", price: "$42", color: "bg-emerald-100" },
-  { name: "Scented soy candle", price: "$18", color: "bg-violet-100" },
+  {
+    name: "Handwoven cotton tote",
+    maker: "Thread & Form",
+    price: "₹2,799",
+    image:
+      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    name: "Organic linen apron",
+    maker: "Loom & Field",
+    price: "₹3,499",
+    image:
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    name: "Scented soy candle",
+    maker: "Northwick Studio",
+    price: "₹1,499",
+    image:
+      "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=80",
+  },
 ]
 
 export default function Hero() {
@@ -84,25 +104,50 @@ export default function Hero() {
             </StaggerItem>
           </div>
 
-          {/* Right: mock product cards */}
+          {/* Right: product card stack */}
           <div className="relative flex min-h-[25rem] items-center justify-center lg:min-h-[28rem]">
-            <div className="relative w-full max-w-sm">
-              {MOCK_PRODUCTS.map((product, i) => (
+            <div
+              className="relative h-[23rem] w-full max-w-sm"
+              aria-label="Featured marketplace products"
+            >
+              {MOCK_PRODUCTS.map((product, index) => (
                 <div
                   key={product.name}
-                  className="absolute top-0 left-0 w-full transition-transform duration-500"
+                  className="absolute left-0 top-0 w-full"
                   style={{
-                    transform: `translateY(${i * 12}px) rotate(${i % 2 === 0 ? "-1.5" : "1.5"}deg)`,
-                    zIndex: MOCK_PRODUCTS.length - i,
+                    transform: `translateY(${index * 16}px) rotate(${
+                      index % 2 === 0 ? "-1.5" : "1.5"
+                    }deg)`,
+                    zIndex: MOCK_PRODUCTS.length - index,
                   }}
                 >
-                  <div className="rounded-2xl border bg-card shadow-lg overflow-hidden">
-                    <div className={`h-32 ${product.color} flex items-center justify-center`}>
-                      <Store className="h-10 w-10 text-muted-foreground/40" />
+                  <div className="overflow-hidden rounded-2xl border bg-card shadow-lg">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        unoptimized
+                        sizes="(min-width: 1024px) 384px, 90vw"
+                        priority={index === 0}
+                        className="object-cover"
+                      />
+                      {index === 0 && (
+                        <span className="absolute left-3 top-3 rounded-full bg-background/90 px-2.5 py-1 text-xs font-medium shadow-sm backdrop-blur">
+                          Admin approved
+                        </span>
+                      )}
                     </div>
                     <div className="p-4">
-                      <p className="font-medium text-sm">{product.name}</p>
-                      <p className="text-sm text-muted-foreground mt-1">{product.price}</p>
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <p className="font-medium text-sm">{product.name}</p>
+                          <p className="mt-1 text-xs text-muted-foreground">
+                            by {product.maker}
+                          </p>
+                        </div>
+                        <p className="text-sm font-semibold">{product.price}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
