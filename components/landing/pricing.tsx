@@ -20,10 +20,10 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto items-stretch">
           {PRICING_PLANS.map((plan, i) => (
-            <StaggerItem key={plan.name} index={i}>
-              <div className="relative pt-3">
+            <StaggerItem key={plan.name} index={i} className="h-full">
+              <div className="relative h-full pt-3">
                 {plan.popular && (
                   <Badge className="absolute left-6 top-0 z-10 shadow-sm">
                     Most popular
@@ -31,7 +31,7 @@ export default function Pricing() {
                 )}
                 <Card
                   className={`
-                    relative h-full rounded-2xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-md
+                    relative flex h-full flex-col rounded-2xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-md
                     ${plan.popular ? "ring-2 ring-primary" : ""}
                   `}
                 >
@@ -68,7 +68,7 @@ export default function Pricing() {
                   </ul>
 
                   <Button
-                    className="mt-6 w-full"
+                    className="mt-6 w-full md:mt-auto"
                     variant={plan.popular ? "default" : "outline"}
                   >
                     {plan.cta}

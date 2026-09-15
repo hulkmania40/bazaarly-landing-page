@@ -47,7 +47,7 @@ export default function Navbar() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center gap-2 font-bold text-lg tracking-tight"
         >
-          <span className="bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
             Bazaarly
           </span>
         </button>
