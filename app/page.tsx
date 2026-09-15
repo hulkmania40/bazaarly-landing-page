@@ -1,19 +1,41 @@
-import { Button } from "@/components/ui/button"
+import type { Metadata } from "next"
+
+import Navbar from "@/components/landing/navbar"
+import Hero from "@/components/landing/hero"
+import SocialProof from "@/components/landing/social-proof"
+import Features from "@/components/landing/features"
+import HowItWorks from "@/components/landing/how-it-works"
+import Roles from "@/components/landing/roles"
+import Pricing from "@/components/landing/pricing"
+import FAQ from "@/components/landing/faq"
+import CTA from "@/components/landing/cta"
+import Footer from "@/components/landing/footer"
+
+export const metadata: Metadata = {
+  title: "Bazaarly — A bazaar built for makers",
+  description:
+    "Bazaarly is a curated marketplace for independent sellers. Discover unique products, manage your storefront, and support independent makers.",
+  openGraph: {
+    title: "Bazaarly — A bazaar built for makers",
+    description:
+      "Discover independent sellers, browse curated storefronts, and shop with confidence.",
+    type: "website",
+  },
+}
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
-    </div>
+    <main>
+      <Navbar />
+      <Hero />
+      <SocialProof />
+      <Features />
+      <HowItWorks />
+      <Roles />
+      <Pricing />
+      <FAQ />
+      <CTA />
+      <Footer />
+    </main>
   )
 }
