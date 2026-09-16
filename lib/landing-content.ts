@@ -162,21 +162,12 @@ export const FAQS = [
 
 export const FOOTER_COLUMNS = [
   {
-    title: "Brand",
-    links: [
-      { label: "About Bazaarly", href: "#" },
-      { label: "Blog", href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "Contact", href: "#" },
-    ],
-  },
-  {
     title: "Product",
     links: [
       { label: "Features", href: "#features" },
       { label: "Pricing", href: "#pricing" },
-      { label: "Changelog", href: "#" },
-      { label: "Roadmap", href: "#" },
+      { label: "How It Works", href: "#how-it-works" },
+      { label: "FAQ", href: "#faq" },
     ],
   },
   {
@@ -191,9 +182,9 @@ export const FOOTER_COLUMNS = [
   {
     title: "Legal",
     links: [
-      { label: "Terms", href: "#" },
-      { label: "Privacy", href: "#" },
-      { label: "Cookies", href: "#" },
+      { label: "Terms of Service", href: "#" },
+      { label: "Privacy Policy", href: "#" },
+      { label: "Cookie Policy", href: "#" },
     ],
   },
 ] as const

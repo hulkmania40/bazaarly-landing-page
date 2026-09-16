@@ -31,7 +31,7 @@ export default function Pricing() {
                 )}
                 <Card
                   className={`
-                    relative flex h-full flex-col rounded-2xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-md
+                    relative flex h-full flex-col rounded-2xl border bg-card p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300
                     ${plan.popular ? "ring-2 ring-primary" : ""}
                   `}
                 >

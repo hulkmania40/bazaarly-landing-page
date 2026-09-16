@@ -38,7 +38,7 @@ export default function Navbar() {
     <header
       className={`
         fixed top-0 inset-x-0 z-50 transition-all duration-300
-        ${scrolled ? "bg-background/80 backdrop-blur-md border-b" : "bg-transparent"}
+        ${scrolled ? "bg-background/90 backdrop-blur-lg border-b shadow-sm" : "bg-transparent"}
       `}
     >
       <nav className="mx-auto max-w-6xl flex items-center justify-between px-6 h-16">
@@ -53,12 +53,12 @@ export default function Navbar() {
         </button>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
+        <div className="hidden md:flex items-center gap-1 text-sm">
           {NAV_LINKS.map(({ href, label }) => (
             <button
               key={href}
               onClick={() => scrollTo(href)}
-              className="hover:text-foreground transition-colors"
+              className="px-3 py-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all duration-200"
             >
               {label}
             </button>

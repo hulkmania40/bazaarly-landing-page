@@ -39,7 +39,7 @@ export default function Features() {
             const Icon = ICON_MAP[icon] ?? CheckCircle2
             return (
               <StaggerItem key={title} index={i}>
-                <Card className="h-full rounded-2xl border bg-card p-6 shadow-sm hover:shadow-md transition-shadow">
+                <Card className="h-full rounded-2xl border bg-card p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                   <div className="h-10 w-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
                     <Icon className="h-5 w-5" />
                   </div>

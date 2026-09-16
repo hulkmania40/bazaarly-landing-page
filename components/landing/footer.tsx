@@ -14,9 +14,9 @@ export default function Footer() {
   return (
     <footer className="border-t py-14 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand column */}
-          <div className="col-span-2 md:col-span-2">
+          <div className="sm:col-span-2 md:col-span-2">
             <span className="font-bold text-xl tracking-tight">Bazaarly</span>
             <p className="mt-3 text-sm text-muted-foreground max-w-xs leading-relaxed">
               A curated marketplace for independent makers and the people who love

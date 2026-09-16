@@ -43,13 +43,30 @@ export default function Hero() {
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      {/* Gradient orbs */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-20 -left-48 w-125 h-125 rounded-full opacity-30"
+        style={{
+          background: "radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-20 -right-48 w-100 h-100 rounded-full opacity-20"
+        style={{
+          background: "radial-gradient(circle, rgba(168,85,247,0.2) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+      />
+
       {/* Subtle dot-grid background */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.03]"
+        className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, currentColor 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, currentColor 1px, transparent 1px)",
           backgroundSize: "24px 24px",
         }}
       />
@@ -61,7 +78,7 @@ export default function Hero() {
             <StaggerItem>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
                 A bazaar built{" "}
-                <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
                   for makers
                 </span>
                 .
@@ -121,7 +138,7 @@ export default function Hero() {
                     zIndex: MOCK_PRODUCTS.length - index,
                   }}
                 >
-                  <div className="overflow-hidden rounded-2xl border bg-card shadow-lg">
+                  <div className="overflow-hidden rounded-2xl border bg-card shadow-lg hover:shadow-xl transition-shadow">
                     <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                       <Image
                         src={product.image}
